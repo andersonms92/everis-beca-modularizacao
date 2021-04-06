@@ -13,8 +13,8 @@ class LoginViewModelFactory(
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
         with(modelClass) {
             when {
-                isAssignableFrom(com.example.login.ui.viewmodel.LoginViewModel::class.java) ->
-                    com.example.login.ui.viewmodel.LoginViewModel(context, repository, checkInternetConnection)
+                isAssignableFrom(LoginViewModel::class.java) ->
+                    LoginViewModel(context, repository, checkInternetConnection)
 
                 else ->
                     throw IllegalArgumentException("Unkown ViewModel class: ${modelClass.name}")
