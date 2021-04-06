@@ -1,4 +1,4 @@
-package com.niemietz.everis.beca.modularizacao.ui
+package com.niemietz.everis.beca.core.com.niemietz.everis.beca.modularizacao.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import com.niemietz.everis.beca.core.com.niemietz.everis.beca.modularizacao.login.constants.LoginConstants
+import com.example.login.constants.LoginConstants
 import com.niemietz.everis.beca.modularizacao.BuildConfig
 import com.niemietz.everis.beca.modularizacao.R
-import com.niemietz.everis.beca.modularizacao.login.ui.LoginActivity
+import com.example.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     private val btLogin: AppCompatButton by lazy { findViewById(R.id.bt_login) }
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListener() {
         btLogin.setOnClickListener {
-            val loginIntent = Intent(this, LoginActivity::class.java)
+            val loginIntent = Intent(this, com.example.login.LoginActivity::class.java)
             startActivityForResult(loginIntent, LOGIN_REQUEST_CODE)
         }
     }
@@ -31,14 +31,14 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == LOGIN_REQUEST_CODE && resultCode == LoginConstants.LOGIN_RESULT_CODE) {
-            val loginOk = data?.extras?.getBoolean(LoginConstants.EXTRA_RESULT_KEY)
+        if (requestCode == LOGIN_REQUEST_CODE && resultCode == com.example.login.constants.LoginConstants.LOGIN_RESULT_CODE) {
+            val loginOk = data?.extras?.getBoolean(com.example.login.constants.LoginConstants.EXTRA_RESULT_KEY)
             if (loginOk == true) {
-                val loginOkIntent = Intent(this, LoginOkActivity::class.java)
+                val loginOkIntent = Intent(this, com.example.login.LoginOkActivity::class.java)
                 startActivity(loginOkIntent)
             } else {
                 onError(
-                    data?.extras?.getString(LoginConstants.EXTRA_ERROR_KEY) ?: UNKNOWN_LOGIN_ERROR
+                    data?.extras?.getString(com.example.login.constants.LoginConstants.EXTRA_ERROR_KEY) ?: UNKNOWN_LOGIN_ERROR
                 )
             }
         }
