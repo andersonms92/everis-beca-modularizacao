@@ -6,10 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
-        <activity android:name="com.example.login.LoginActivity"
+        <activity android:name="com.example.login.ui.LoginActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name="com.example.login.LoginOkActivity"
+        <activity android:name="com.example.login.com.niemietz.everis.beca.core.com.niemietz.everis.beca.modularizacao.ui.LoginOkActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

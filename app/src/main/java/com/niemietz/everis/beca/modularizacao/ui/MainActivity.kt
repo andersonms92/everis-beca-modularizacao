@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import com.niemietz.everis.beca.modularizacao.BuildConfig
+import com.niemietz.everis.beca.core.BuildConfig
 import com.niemietz.everis.beca.modularizacao.R
 
 class MainActivity : AppCompatActivity() {

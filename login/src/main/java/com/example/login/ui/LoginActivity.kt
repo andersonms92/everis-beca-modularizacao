@@ -1,4 +1,4 @@
-package com.example.login
+package com.example.login.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Group
 import androidx.lifecycle.ViewModelProvider
+import com.example.login.R
 import com.example.login.constants.LoginConstants.EXTRA_ERROR_KEY
 import com.example.login.constants.LoginConstants.EXTRA_RESULT_KEY
 import com.example.login.constants.LoginConstants.LOGIN_RESULT_CODE
